@@ -17,9 +17,7 @@ class STT():
     def __init__(self):
         # Creates an instance of a speech config with specified subscription key and service region.
         # Replace with your own subscription key and service region (e.g., "westus").
-        my_key = ""
-        with open("src/keys/tts_key.txt", 'r') as key_file:
-                my_key = key_file.read()
+        my_key = "2506a837cb0945bf9ad6c315b683291b"
         speech_key, service_region = my_key, "westus"
         self.speech_config = speechsdk.SpeechConfig(subscription=speech_key, region=service_region)
 

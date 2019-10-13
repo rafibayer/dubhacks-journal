@@ -50,7 +50,7 @@ class Viz():
 
         # plt.savefig('../viz/grid.png')
         if sad_counter > 10:
-            return "You have been feeling down lately, consider looking into some help
+            return "You have been feeling down lately, consider looking into some help"
         else:
             return "Glad you're doing okay! Keep it up!"
 
