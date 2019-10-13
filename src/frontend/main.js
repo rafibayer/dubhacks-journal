@@ -5,7 +5,8 @@
 
   function init() {
     id("signup").addEventListener("click", signup);
-    id("login").addEventListener("click", login);
+    //id("login").addEventListener("click", login);
+    id("login").addEventListener("click", testAPI);
     addPageInd();
   }
 
@@ -13,9 +14,16 @@
     window.open("signup.html","_self")
   }
 
+  function getEmotionFromCamera() {
+    result = getFromURL("http://127.0.0.1:5000/take_picture/");
+    alert(result);
+  }
+
   function login() {
     window.open("login.html","_self")
   }
+
+
 
   function addPageInd() { //add function to make the indicator change when scrolling!!
     id("dashboard").addEventListener("click", activeDash);
@@ -47,8 +55,11 @@
   function getFromURL(url) {
     fetch(url)
       .then(checkStatus)
-      .then(return)
-      .catch(console.log);
+      .then(returnPromise);
+  }
+
+  function returnPromise(responce) {
+    return responce;
   }
 
   /**
