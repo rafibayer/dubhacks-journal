@@ -30,8 +30,6 @@ class AnalysisPipeline:
 
         return "ANALYSIS COMPLETE"
 
-        
-
 
 
 
