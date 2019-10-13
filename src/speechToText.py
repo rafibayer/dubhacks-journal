@@ -1,4 +1,6 @@
 '''
+https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/quickstart-python
+
 USAGE:
 Create new STT instance: stt = STT()
 
@@ -47,6 +49,7 @@ class STT():
 
         return result
 
+        # can be used for validation, from original code sample
         # # Checks result.
         # if result.reason == speechsdk.ResultReason.RecognizedSpeech:
         #     print("returning recognized speech...")

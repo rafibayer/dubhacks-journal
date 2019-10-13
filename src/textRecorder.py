@@ -32,7 +32,10 @@ class TextRecorder:
             filename = DATA_LOCATION + self.get_date() + ".txt"
 
             self.filepath = filename
-            self.data = dict()
+            if os.path.exists(self.filepath):
+                self.data = self.load_data(self.filepath)
+            else:
+                self.populate_data_with_template()
 
 
     # string filepath: path to file where data should be written as json
@@ -153,30 +156,4 @@ class TextRecorder:
         datestamp = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d')
         return datestamp
 
-
-
-
-# tr = TextRecorder()
-# tr.populate_data_with_template()
-# tr.add_entry("today was a good day :)")
-# time.sleep(0.1)
-# tr.add_entry("today sucked")
-# print(tr.get_entry(0))
-# tr.serialize_data(tr.filepath)
-# tr.load_data(tr.filepath)
-# print(tr.get_entry(1))
-# tr.append_entry(1, "jk today was gr8")
-# print(tr.get_entry(1))
-# tr.serialize_data(tr.filepath)
-# time.sleep(0.1)
-
-# tr2 = TextRecorder(DATA_LOCATION + tr.get_date() + ".txt")
-# tr2.add_entry("another entry for the day")
-# tr2.clear_entry(0)
-# tr2.serialize_data(tr.filepath)
-
-# print(tr2.get_entry(0))
-# print(tr2.get_entry(1))
-
-# print(tr2.data['text_entries'].keys())
 

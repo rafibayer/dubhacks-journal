@@ -1,3 +1,5 @@
+# https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/quickstart-python-text-to-speech
+
 import os
 import requests
 import time
