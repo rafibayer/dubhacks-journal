@@ -1,1 +1,0 @@
-{"filename": "src/text_data/2019-10-12.txt", "date": "2019-10-12", "text_entries": {"0": "==DELETED ENTRY==", "1": "2019-10-12 16-32-55\ntoday sucked\njk today was gr8", "2": "2019-10-12 16-32-55\nanother entry for the day"}}
