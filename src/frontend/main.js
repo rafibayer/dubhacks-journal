@@ -5,7 +5,8 @@
 
   function init() {
     id("signup").addEventListener("click", signup);
-    id("login").addEventListener("click", login);
+    //id("login").addEventListener("click", login);
+    id("login").addEventListener("click", getEmotionFromCamera);
     addPageInd();
   }
 
@@ -13,9 +14,17 @@
     window.open("signup.html","_self")
   }
 
-  function login() {
-    window.open("login.html","_self")
+  function getEmotionFromCamera() {
+    alert("calling api...");
+    getFromURL("http://127.0.0.1:5000/take_picture/");
+
   }
+
+  // function login() {
+  //   window.open("login.html","_self")
+  // }
+
+
 
   function addPageInd() { //add function to make the indicator change when scrolling!!
     id("dashboard").addEventListener("click", activeDash);
@@ -43,26 +52,38 @@
     id("about").classList.remove("selected");
     id("contact").classList.remove("selected");
   }
-
-  function getFromURL(url) {
-    fetch(url)
-      .then(checkStatus)
-      .then(return)
-      .catch(console.log);
-  }
-
-  /**
-  function getFromURL(url) {
-    fetch(url)
-      .then(checkStatus)
-      .then(getText)
-      .catch(console.log);
-  }
-
-  function getText(string) {
-
+/**
+  async function getFromURL(url) {
+    fetch(url, {mode:"no-cors"}).then(data=>{return data.text()})
+    .then(res=>{alert(res)});
+    
   }
   */
+  
+  
+
+  function getFromURL(url) {
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "http://127.0.0.1:5000/take_picture/",
+      "method": "GET",
+      "headers": {
+        "cache-control": "no-cache",
+        "Postman-Token": "eb9966bc-d1fb-4af9-81c2-10b0222dbe1a"
+      }
+    }
+    
+    $.ajax(settings).done(function (response) {
+      console.log(response);
+    });
+  } 
+
+
+  function getText(string) {
+    console.log(string);
+  }
+
 
 /** helper function to return the response's result text if successful, otherwise
     returns the rejected Promise result with an error status and corresponding text

@@ -6,7 +6,9 @@ from visualize import Viz
 import os
 
 
+
 app = Flask(__name__)
+
 
 @app.route("/get_stt/", methods=['GET'])
 def call_stt():
