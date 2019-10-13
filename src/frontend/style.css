@@ -18,8 +18,9 @@ body {
 }
 
 .centered2 {
-  margin-left: 11vw;
-  margin-right: 11vw;
+  margin-left: 13vw;
+  margin-right: 13vw;
+  padding-top: 2vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -201,14 +202,14 @@ h6 {
 .info, li{
   margin-left: 5vw;
   color: #2F2F2F;
-  font-size: 3vh;
+  font-size: 4vh;
 }
 
 .info2 {
   padding-top: 5vh;
   margin-left: 5vw;
   color: #2F2F2F;
-  font-size: 3vh;
+  font-size: 4vh;
 }
 
 .option {
