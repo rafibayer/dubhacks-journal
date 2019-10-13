@@ -1,1 +1,0 @@
-{"filename": "src/text_data/2019-10-12 15-53-00.txt", "text_entries": {"0": "today was a good day :)", "1": "today sucked\njk today was gr8"}}
