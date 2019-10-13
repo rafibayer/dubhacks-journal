@@ -10,12 +10,29 @@
 
   function start() {
     id("check").classList.remove("hidden");
-    /* Sina put your code here!!!*/
+    getFromURL("http://127.0.0.1:5000/run_text_analysis/");
   }
 
   function submit() {
     window.open("submit.html","_self")
   }
+
+  function getFromURL(url) {
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": url,
+      "method": "GET",
+      "headers": {
+        "cache-control": "no-cache",
+        "Postman-Token": "eb9966bc-d1fb-4af9-81c2-10b0222dbe1a"
+      }
+    }
+    
+    $.ajax(settings).done(function (response) {
+      console.log(response);
+    });
+  } 
 
 /** short function to simply lines of code that require accessing the document
     with an id,
