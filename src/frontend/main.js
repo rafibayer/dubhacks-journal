@@ -6,7 +6,7 @@
   function init() {
     id("signup").addEventListener("click", signup);
     //id("login").addEventListener("click", login);
-    id("login").addEventListener("click", testAPI);
+    id("login").addEventListener("click", getEmotionFromCamera);
     addPageInd();
   }
 
@@ -15,13 +15,14 @@
   }
 
   function getEmotionFromCamera() {
-    result = getFromURL("http://127.0.0.1:5000/take_picture/");
-    alert(result);
+    alert("calling api...");
+    getFromURL("http://127.0.0.1:5000/take_picture/");
+
   }
 
-  function login() {
-    window.open("login.html","_self")
-  }
+  // function login() {
+  //   window.open("login.html","_self")
+  // }
 
 
 
@@ -51,29 +52,29 @@
     id("about").classList.remove("selected");
     id("contact").classList.remove("selected");
   }
-
-  function getFromURL(url) {
-    fetch(url)
-      .then(checkStatus)
-      .then(returnPromise);
+/**
+  async function getFromURL(url) {
+    fetch(url, {mode:"no-cors"}).then(data=>{return data.text()})
+    .then(res=>{alert(res)});
+    
   }
+  */
+  
+  
 
-  function returnPromise(responce) {
-    return responce;
-  }
-
-  /**
-  function getFromURL(url) {
-    fetch(url)
-      .then(checkStatus)
-      .then(getText)
-      .catch(console.log);
+  function getFromURL(theUrl)
+  {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    alert(xmlHttp.responseText);
+    return xmlHttp.responseText;
   }
 
   function getText(string) {
-
+    console.log(string);
   }
-  */
+
 
 /** helper function to return the response's result text if successful, otherwise
     returns the rejected Promise result with an error status and corresponding text
