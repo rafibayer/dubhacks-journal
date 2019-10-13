@@ -93,8 +93,8 @@ h3 {
   color: #2F2F2F;
   font-size: 15vh;
   font-weight: bold;
-  margin: -2vh 0 0 23vw;
-  letter-spacing: .1em;
+  margin: -2vh 0 0 13vw;
+  letter-spacing: .025em;
 }
 
 h4 {
@@ -210,4 +210,5 @@ h6 {
 
 #emotions {
   width: 60vw;
+  padding-top: 5vh;
 }
