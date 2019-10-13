@@ -24,7 +24,7 @@ class AnalysisPipeline:
             elif sentiment >= self.happyThreshold:
                 increment = 1
             for word in words:
-                self.db.set_word(word, self.db.get_word(word) + increment)        
+                self.db.set_word(word, self.db.get_word(word) + increment)
 
 
 
