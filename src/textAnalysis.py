@@ -7,6 +7,9 @@ Create new TextAnalysis instance: ta = TextAnalysis(input_texts)
 use azure text analytics to return sentiments of sentences and key associated entities
 
 results = ta.analysis()
+
+results is formatted as a dictionary: results[id] = (sentiment score from 0-1, [list of key words])
+example: {0: (0.0024226605892181396, ['Rome']), 1: (0.024681180715560913, ['$200'])}
 '''
 
 import requests
