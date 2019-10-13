@@ -6,7 +6,7 @@
   function init() {
     id("signup").addEventListener("click", signup);
     id("login").addEventListener("click", login);
-    addPageInd();
+    id("viewMoods").addEventListener("click", moods);
   }
 
   function signup() {
@@ -17,31 +17,8 @@
     window.open("login.html","_self")
   }
 
-  function addPageInd() { //add function to make the indicator change when scrolling!!
-    id("dashboard").addEventListener("click", activeDash);
-    id("about").addEventListener("click", activeAbout);
-    id("contact").addEventListener("click", activeContact);
-  }
-
-  function activeDash() {
-    removeInd();
-    id("dashboard").classList.add("selected");
-  }
-
-  function activeAbout() {
-    removeInd();
-    id("about").classList.add("selected");
-  }
-
-  function activeContact() {
-    removeInd();
-    id("contact").classList.add("selected");
-  }
-
-  function removeInd() {
-    id("dashboard").classList.remove("selected");
-    id("about").classList.remove("selected");
-    id("contact").classList.remove("selected");
+  function moods() {
+    window.open("viewmood.html","_self")
   }
 
   function getFromURL(url) {
@@ -50,19 +27,6 @@
       .then(return)
       .catch(console.log);
   }
-
-  /**
-  function getFromURL(url) {
-    fetch(url)
-      .then(checkStatus)
-      .then(getText)
-      .catch(console.log);
-  }
-
-  function getText(string) {
-
-  }
-  */
 
 /** helper function to return the response's result text if successful, otherwise
     returns the rejected Promise result with an error status and corresponding text
