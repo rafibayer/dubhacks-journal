@@ -6,7 +6,7 @@
   function init() {
     id("signup").addEventListener("click", signup);
     //id("login").addEventListener("click", login);
-    id("login").addEventListener("click", getEmotionFromCamera);
+    id("login").addEventListener("click", getEmotionFromCamera); //SWITCH TO DIFF BUTTON
     addPageInd();
   }
 

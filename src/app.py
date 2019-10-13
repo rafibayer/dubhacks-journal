@@ -4,8 +4,8 @@ from camera import Camera
 from analysisPipeline import AnalysisPipeline
 from visualize import Viz
 import os
-
 from flask_cors import CORS
+
 app = Flask(__name__)
 CORS(app)
 
