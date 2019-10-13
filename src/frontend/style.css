@@ -1,19 +1,184 @@
-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    font-family: 'Montserrat', sans-serif;
-}
+@import url('https://fonts.googleapis.com/css?family=Esteban|Montserrat&display=swap');
 
 body {
-    font-family: 'Montserrat', sans-serif;
+  color: #2F2F2F;
 }
 
-a {
-    text-decoration: none;
+.sidebyside {
+  display: flex;
+}
+
+.centered {
+  margin-left: 450px;
+  margin-right: 450px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.spread {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+/*
+ .slider {
+   height: 100px;
+   overflow: hidden;
+ }
+
+ .slider h3 {
+   height: 100px;
+   margin-bottom: 100px;
+ }
+
+ @keyframes slider {
+   0% {margin-top: -800px;}
+   25% {margin-top: -600px;}
+   50% {margin-top: -400px;}
+   75% {margin-top: -200px;}
+   100% {margin-top: 0px;}
+ }
+
+ .slider {
+   animation: slider 5s linear infinite;
+ }*/
+
+#landing {
+  background-image: url("imgs/papers.jpg");
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
 }
 
 .logo {
-    height: 200px;
+  height: auto;
+  margin-left: 50px;
 }
 
+#logo {
+  padding: 20px 650px 0px 20px;
+  width: 150px;
+}
+
+#longlogo {
+  padding: 20px 500px 0px 20px;
+  width: 300px;
+}
+
+h2 {
+  font-family: "Esteban", serif;
+  color: #EBBAB9;
+  font-size: 85px;
+  padding: 100px 0px 0px 250px;
+  margin-bottom: -10px;
+  letter-spacing: .02em;
+}
+
+h3 {
+  font-family: "Montserrat", sans-serif;
+  color: #2F2F2F;
+  font-size: 110px;
+  font-weight: bold;
+  margin: -10px 0px 0px 360px;
+  letter-spacing: .1em;
+}
+
+h4 {
+  font-size: 42px;
+}
+
+p {
+  margin-top: -30px;
+  font-size: 20px;
+}
+
+#text {
+  font-family: "Esteban", serif;
+  color: #2F2F2F;
+  padding-left: 100px;
+  padding-right: 200px;
+}
+
+/* for the nav bar */
+nav {
+  padding-top: 15px;
+  overflow: hidden;
+  float: left;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  color: #53599A;
+}
+
+h1 {
+  display: inline-block;
+  margin: 15px 20px 15px 40px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15pt;
+  color: #53599A;
+  letter-spacing: .2em;
+}
+
+h1:hover {
+  color: #DCC9B6;
+}
+
+.selected {
+  text-decoration: underline;
+}
+
+/* for the buttons */
+button {
+  border-radius: 20px;
+  font-family: 'Esteban', serif;
+  font-size: 24px;
+  background-color: #EBBAB9;
+  border: none;
+  color: #2F2F2F;
+  width: 150px;
+  height: 40px;
+  margin: 40px 0px 0px 0px;
+}
+
+button:hover {
+  background-color: #2F2F2F;
+  color: #EBBAB9;
+  cursor: pointer;
+}
+
+h5 {
+  font-family: "Esteban", serif;
+  font-size: 96px;
+  text-align: center;
+  color: #DCC9B6;
+}
+
+.aboutus {
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 50px;
+  font-family: "Esteban", serif;
+  font-size: 24px;
+}
+
+.profilepic {
+  width: 250px;
+}
+
+h6 {
+  font-family: "Montserrat", sans-serif;
+  color: #EBBAB9;
+  font-size: 32px;
+  float: center;
+}
+
+h7 {
+
+}
+
+.option {
+  margin-top: 400px;
+  width: 200px;
+  height: 200px;
+}
