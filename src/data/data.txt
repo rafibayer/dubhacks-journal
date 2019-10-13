@@ -1,1 +1,1 @@
-{"wordSentiments": {"John": "1", "john": "0"}, "dayEmotions": {"0": "neutral"}, "dayText": {}}
+{"wordSentiments": {"John": "1", "john": "0"}, "dayEmotions": {"0": "neutral", "1": "neutral", "2": "neutral", "3": "happiness"}, "dayText": {}}
