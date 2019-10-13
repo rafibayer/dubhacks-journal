@@ -5,8 +5,9 @@
 
   function init() {
     id("signup").addEventListener("click", signup);
-    id("login").addEventListener("click", login);
-    id("viewMoods").addEventListener("click", moods);
+    //id("login").addEventListener("click", login);
+    id("login").addEventListener("click", login); //SWITCH TO DIFF BUTTON
+    addPageInd();
   }
 
   function signup() {
@@ -19,18 +20,47 @@
 
   }
 
-  function moods() {
-    window.open("viewmood.html","_self")
+  // function login() {
+  //   window.open("login.html","_self")
+  // }
+
+
+
+  function addPageInd() { //add function to make the indicator change when scrolling!!
+    id("dashboard").addEventListener("click", activeDash);
+    id("about").addEventListener("click", activeAbout);
+    id("contact").addEventListener("click", activeContact);
+  }
+
+  function activeDash() {
+    removeInd();
+    id("dashboard").classList.add("selected");
+  }
+
+  function activeAbout() {
+    removeInd();
+    id("about").classList.add("selected");
+  }
+
+  function activeContact() {
+    removeInd();
+    id("contact").classList.add("selected");
+  }
+
+  function removeInd() {
+    id("dashboard").classList.remove("selected");
+    id("about").classList.remove("selected");
+    id("contact").classList.remove("selected");
   }
 /**
   async function getFromURL(url) {
     fetch(url, {mode:"no-cors"}).then(data=>{return data.text()})
     .then(res=>{alert(res)});
-
+    
   }
   */
-
-
+  
+  
 
   function getFromURL(url) {
     var settings = {
@@ -43,11 +73,11 @@
         "Postman-Token": "eb9966bc-d1fb-4af9-81c2-10b0222dbe1a"
       }
     }
-
+    
     $.ajax(settings).done(function (response) {
       console.log(response);
     });
-  }
+  } 
 
 
   function getText(string) {

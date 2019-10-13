@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Esteban|Montserrat&display=swap');
 
 body {
-  padding-top: 0;
   color: #2F2F2F;
 }
 
@@ -17,22 +16,10 @@ body {
   align-items: center;
 }
 
-.centered2 {
-  margin-left: 11vw;
-  margin-right: 11vw;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
 .spread {
   display: flex;
   justify-content: space-around;
   align-items: center;
-}
-
-.selected {
-  text-decoration: underline;
 }
 /*
  .slider {
@@ -70,20 +57,20 @@ body {
 }
 
 #logo {
-  padding: 5vh 40vw 0 0;
+  padding: 5vh 40vw 0px 0px;
   width: 10vw;
 }
 
 #longlogo {
-  padding: 5vh 30vw 0 0;
+  padding: 5vh 30vw 0px 0px;
   width: 20vw;
 }
 
 h2 {
   font-family: "Esteban", serif;
   color: #EBBAB9;
-  font-size: 10vh;
-  padding: 12vh 0 0 15vw;
+  font-size: 85px;
+  padding: 12vh 0px 0px 15vw;
   margin-bottom: -1vw;
   letter-spacing: .02em;
 }
@@ -91,19 +78,19 @@ h2 {
 h3 {
   font-family: "Montserrat", sans-serif;
   color: #2F2F2F;
-  font-size: 15vh;
+  font-size: 110px;
   font-weight: bold;
-  margin: -2vh 0 0 13vw;
-  letter-spacing: .025em;
+  margin: -2vh 0px 0px 23vw;
+  letter-spacing: .1em;
 }
 
 h4 {
-  font-size: 5.5vh;
+  font-size: 42px;
 }
 
 p {
   margin-top: -5vh;
-  font-size: 3vh;
+  font-size: 20px;
 }
 
 #text {
@@ -126,7 +113,7 @@ nav {
 
 h1 {
   display: inline-block;
-  margin: 2vh 2vw 0 1vw;
+  margin: 2vh 2vw 4vh 1vw;
   font-family: 'Montserrat', sans-serif;
   font-size: 15pt;
   color: #53599A;
@@ -145,13 +132,13 @@ h1:hover {
 button {
   border-radius: 20px;
   font-family: 'Esteban', serif;
-  font-size: 3vh;
+  font-size: 24px;
   background-color: #EBBAB9;
   border: none;
   color: #2F2F2F;
   width: 10vw;
   height: 5vh;
-  margin: 6vh 0 0 0;
+  margin: 6vh 0px 0px 0px;
   box-shadow: 2px 2px 5px #2F2F2F;
 }
 
@@ -163,7 +150,7 @@ button:hover {
 
 h5 {
   font-family: "Esteban", serif;
-  font-size: 15vh;
+  font-size: 96px;
   text-align: center;
   color: #DCC9B6;
 }
@@ -173,7 +160,7 @@ h5 {
   padding-right: 5vw;
   padding-bottom: 5vh;
   font-family: "Esteban", serif;
-  font-size: 3vh;
+  font-size: 24px;
 }
 
 .profilepic {
@@ -183,7 +170,7 @@ h5 {
 h6 {
   font-family: "Montserrat", sans-serif;
   color: #EBBAB9;
-  font-size: 5vh;
+  font-size: 32px;
   text-align: center;
 }
 
@@ -196,7 +183,8 @@ h6 {
 .info {
   margin-left: 5vw;
   color: #2F2F2F;
-  font-size: 3vh;
+  font-size: 24px;
+
 }
 
 .option {
@@ -204,11 +192,6 @@ h6 {
   width: 30vh;
   height: 30vh;
   font-family: "Montserrat", sans-serif;
-  font-size: 180%;
+  font-size: 30px;
   letter-spacing: .05em;
-}
-
-#emotions {
-  width: 60vw;
-  padding-top: 5vh;
 }

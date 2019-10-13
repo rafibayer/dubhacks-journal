@@ -5,17 +5,18 @@
     <meta charset="UTF-8" />
     <title>Dash</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="main.js"></script>
+    <script src="dashboard.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
   <body>
     <nav class="sidebyside">
         <a href="tidbits.html"><img class="logo" id="longlogo" src="imgs/longlogo.png"></a> <!--REPLACE LINKS-->
-        <a href="dashboard.html"><h1 id="dashboard" class="selected">DASHBOARD</h1></a>
+        <a href="dashboard.html"><h1 id="dashboard">DASHBOARD</h1></a>
         <a href="about.html"><h1 id="about">ABOUT US</h1></a>
         <a href="contact.html"><h1 id="contact">CONTACT</h1></a>
     </nav>
-    <h5 class="title">Hi _____,</h5>
-    <p class=info>enter personalized recommendation here</p>
+    <h5 class="title">Hi Sina,</h5>
+    <p class=info id="personalized">enter personalized recommendation here</p>
     <section class="spread">
       <button class="option" id="addEntry">ADD ENTRY</button>
       <button class="option" id="recordEmotion">RECORD EMOTION</button>
