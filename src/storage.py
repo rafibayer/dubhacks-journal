@@ -1,13 +1,38 @@
 '''
+
+
 USAGE:
+
+Create an instance for the DB
+    db = Storage()
+
 GET/SET word: get and set the net sentiment for passed word
     Used for Sina's text analysis
+        getting word:
+            db.get_word(YOUR_WORD)
+
+        setting word:
+            db.set_word(YOUR_WORD, VALUE)
+
+        updating word:
+            db.set_word(YOUR_WORD, db.get_word(YOUR_WORD) + VALUE)
+
 
 GET/SET day_emotion: get and set the emotion for a day
     Used for Dana's face emotion recognizer
+        getting emotion for day:
+            db.get_day_emotion(DAY)
+
+        setting emotion for day:
+            db.set_day_emotion(DAY, EMOTION)
 
 GET/SET day_text: get and set for text journal entry for a day
     Used for Rafi's speech to text
+        getting emotion for day:
+            db.get_day_text(DAY)
+
+        setting emotion for day:
+            db.set_day_text(DAY, TEXT)
 
 
 THINGS YOU NEED:
@@ -92,9 +117,6 @@ class Storage:
         text = str(text)
         self.data["dayText"][day] = text
         self.serialize()
-
-S = Storage()
-S.set_day_text(31, "Happy Halloween")
 
 
 
