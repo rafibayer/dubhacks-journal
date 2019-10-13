@@ -17,13 +17,16 @@ class Viz():
             emotion = 0
             if self.days[str(i)] == "happiness":
                 emotion = 1
-                sad_counter = 0
+                if sad_counter < 5:
+                    sad_counter = 0
             elif self.days[str(i)] == "neutral":
                 emotion = 0
-                sad_counter = 0
+                if sad_counter < 5:
+                    sad_counter = 0
             elif self.days[str(i)] == "surprise":
                 emotion = 0
-                sad_counter = 0
+                if sad_counter < 5:
+                    sad_counter = 0
             else:
                 emotion = -1
                 sad_counter += 1
@@ -58,8 +61,8 @@ class Viz():
         sorted_x = sorted(self.words_dict.items(), key=lambda kv: int(kv[1]))
         saddest = sorted_x[0][0]
         happiest = sorted_x[len(sorted_x)-1][0]
-        middle1 = sorted_x[len(sorted_x)/2][0]
-        middle2 = sorted_x[len(sorted_x)/2 + 1][0]
+        middle1 = sorted_x[int(len(sorted_x)/2)][0]
+        middle2 = sorted_x[int(len(sorted_x)/2 + 1)][0]
         return [happiest, middle1, middle2, saddest]
 
 
