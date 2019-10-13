@@ -3,12 +3,15 @@ import requests
 import base64
 from azure.cognitiveservices.vision.face import FaceClient
 from msrest.authentication import CognitiveServicesCredentials
+from src.storage import Storage
 import io
 
 # Camera class that takes a photo and returns an emotion analyzed with
 # Azure emotion detection.
 class Camera():
     def getEmotion(self):
+        db = Storage()
+
         cam = cv2.VideoCapture(0)
         cv2.namedWindow('Press space to take a photo')
 
@@ -26,8 +29,9 @@ class Camera():
         # Free resources
         cam.release()
         cv2.destroyAllWindows()
-
-        return emotion
+        dayNum = db.get_next_day()
+        db.set_day_emotion(dayNum, emotion)
+        return
 
     # Takes emotion values from face detection.
     # Finds and returns the emotion with highest likelihood.
