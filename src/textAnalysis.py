@@ -19,10 +19,18 @@ class TextAnalysis():
         self.documents = {"documents":[]}
         temp_dict = dict()
         for idx, input_text in enumerate(input_texts):
-            temp_dict['id'] = idx
+            temp_dict['id'] = idx+1
             temp_dict['language'] = "en"
             temp_dict['text'] = input_text
-            self.documents['documents'].append(temp_dict)
+            self.documents['documents'].append(temp_dict.copy())
+            temp_dict.clear()
+        
+        # self.documents = {"documents": [
+        #     {"id": "1", "language": "en",
+        #         "text": "I miss Rome"},
+        #     {"id": "2", "language": "en",
+        #         "text": "I'm having some money issues. Nothing too big, but I can't afford $200."}
+        # ]}
 
     def analysis(self):
         key_var_name = 'TEXT_ANALYTICS_SUBSCRIPTION_KEY'
@@ -39,26 +47,22 @@ class TextAnalysis():
 
         sentiment_url = endpoint + "/text/analytics/v2.1/sentiment"
 
-        # documents = {"documents": [
-        #     {"id": "1", "language": "en",
-        #         "text": "I miss Rome"},
-        #     {"id": "2", "language": "en",
-        #         "text": "I'm having some money issues. Nothing too big, but I can't afford $200."}
-        # ]}
+        #documents = self.documents
+        print(self.documents)
 
         #hit azure for sentiment analysis
         headers = {"Ocp-Apim-Subscription-Key": subscription_key}
-        response = requests.post(sentiment_url, headers=headers, json=documents)
+        response = requests.post(sentiment_url, headers=headers, json=self.documents)
         sentiments = response.text
         #pprint(sentiments)
-
+        
         sentiments_response = json.loads(sentiments)
 
         entities_url = endpoint + "/text/analytics/v2.1/entities"
 
         #hit azure for entity extraction
         headers = {"Ocp-Apim-Subscription-Key": subscription_key}
-        response = requests.post(entities_url, headers=headers, json=documents)
+        response = requests.post(entities_url, headers=headers, json=self.documents)
         entities = response.text
         #pprint(entities)
 
