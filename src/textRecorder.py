@@ -4,11 +4,8 @@ import time
 import os
 import sys
 
-HIDE_PRINTS = False # change to true to hide print statements
 DATA_LOCATION = "src/text_data/"
 
-if HIDE_PRINTS:
-    sys.stdout = open(os.devnull, 'w')
 
 class TextRecorder:
 
