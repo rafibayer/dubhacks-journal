@@ -1,6 +1,6 @@
-from src.speechToText import STT
-from src.textAnalysis import TextAnalysis
-from src.storage import Storage
+from speechToText import STT
+from textAnalysis import TextAnalysis
+from storage import Storage
 
 class AnalysisPipeline:
     def __init__(self):
@@ -11,6 +11,8 @@ class AnalysisPipeline:
 
     def getAndAnalyzeSpeech(self):
         input_text = self.stt.speech_to_text()
+
+        self.db.set_day_text(self.db.get_next_day(), input_text)
 
         ta = TextAnalysis(input_text)
         result = ta.analysis()
@@ -24,7 +26,11 @@ class AnalysisPipeline:
             elif sentiment >= self.happyThreshold:
                 increment = 1
             for word in words:
-                self.db.set_word(word, self.db.get_word(word) + increment)        
+                self.db.set_word(word, self.db.get_word(word) + increment)
+
+        return "ANALYSIS COMPLETE"
+
+        
 
 
 
