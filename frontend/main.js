@@ -10,11 +10,11 @@
   }
 
   function signup() {
-
+    window.open("signup.html","_self")
   }
 
   function login() {
-
+    window.open("login.html","_self")
   }
 
   function addPageInd() { //add function to make the indicator change when scrolling!!
@@ -43,6 +43,26 @@
     id("about").classList.remove("selected");
     id("contact").classList.remove("selected");
   }
+
+  function getFromURL(url) {
+    fetch(url)
+      .then(checkStatus)
+      .then(return)
+      .catch(console.log);
+  }
+
+  /**
+  function getFromURL(url) {
+    fetch(url)
+      .then(checkStatus)
+      .then(getText)
+      .catch(console.log);
+  }
+
+  function getText(string) {
+
+  }
+  */
 
 /** helper function to return the response's result text if successful, otherwise
     returns the rejected Promise result with an error status and corresponding text
