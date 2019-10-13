@@ -1,6 +1,4 @@
 '''
-
-
 USAGE:
 
 Create an instance for the DB
