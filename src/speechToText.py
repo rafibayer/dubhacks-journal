@@ -60,6 +60,5 @@ class STT():
         #     if cancellation_details.reason == speechsdk.CancellationReason.Error:
         #         print("Error details: {}".format(cancellation_details.error_details))
 
-
-stt = STT()
-stt.speech_to_text()
+# s = STT()
+# print(s.speech_to_text())
