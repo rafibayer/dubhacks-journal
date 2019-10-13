@@ -82,6 +82,9 @@ class Storage:
         self.data["wordSentiments"][word] = str(val)
         self.serialize()
 
+    def get_all_words(self):
+        return self.data["wordSentiments"]
+
     def get_day_emotion(self, day):
         day = str(day)
         if day in self.data["dayEmotions"].keys():
@@ -91,6 +94,9 @@ class Storage:
             self.data["dayEmotions"][day] = "None"
             self.serialize()
             return "None"
+
+    def get_next_day(self):
+        return len(self.data["dayEmotions"])
 
 
     def set_day_emotion(self, day, emotion):
