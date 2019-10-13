@@ -1,7 +1,8 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from speechToText import STT
 from camera import Camera
 from analysisPipeline import AnalysisPipeline
+from visualize import Viz
 import os
 
 
@@ -34,9 +35,19 @@ def call_ap():
     return result
 
 
+@app.route("/get_happy_sad/", methods=['GET'])
+def call_happy_sad():
+    my_vis = Viz()
+    result = my_vis.happy_or_sad()
+    print(result)
+    return result
 
-
-
+@app.route("/get_word_assoc/", methods=['GET'])
+def call_word_assoc():
+    my_vis = Viz()
+    result = my_vis.wordAssociation()
+    print(result)
+    return jsonify(result)
 
 
 if __name__ == "__main__":

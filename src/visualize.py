@@ -10,7 +10,7 @@ class Viz():
         self.words_dict = self.db.get_all_words()
         self.days = self.db.data["dayEmotions"]
 
-    def makeGrid(self):
+    def happy_or_sad(self):
         arr = []
         sad_counter = 0
         for i in range(0,30):
