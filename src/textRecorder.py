@@ -1,8 +1,14 @@
 import json
 import datetime
 import time
+import os
+import sys
 
+HIDE_PRINTS = False # change to true to hide print statements
 DATA_LOCATION = "src/text_data/"
+
+if HIDE_PRINTS:
+    sys.stdout = open(os.devnull, 'w')
 
 class TextRecorder:
 
@@ -16,6 +22,10 @@ class TextRecorder:
 
         if self.filepath is not None:
             print("Loading entries from existing file...")
+
+            if not os.path.exists(filepath):
+                print("Passed filepath doesn't exist")
+                raise FileNotFoundError
 
             self.data = self.load_data(self.filepath)
 
@@ -66,7 +76,7 @@ class TextRecorder:
     def add_entry(self, text):
         print(f"adding new entry with content: {text}")
 
-        self.data["text_entries"][self.next_id()] = self.get_date_time() + "\n" + text
+        self.data["text_entries"][self.next_id()] = self.get_date_time() + "\n" + str(text)
 
     # string entry_id: id of entry to change
     # string text: new text for entry
@@ -76,7 +86,7 @@ class TextRecorder:
 
         if entry_id in self.data['text_entries']:
             print("\tEntry found, editing...")
-            self.data["text_entries"][entry_id] = self.get_date_time() + "\n" + text
+            self.data["text_entries"][entry_id] = self.get_date_time() + "\n" + str(text)
         else:
             print("\tEntry not found")
 
@@ -88,7 +98,7 @@ class TextRecorder:
 
         if entry_id in self.data['text_entries']:
             print("\tEntry found, appending...")
-            self.data['text_entries'][entry_id] += "\n" + text
+            self.data['text_entries'][entry_id] += "\n" + str(text)
         else:
             print("\tEntry not found")
         
@@ -104,7 +114,7 @@ class TextRecorder:
             return self.data['text_entries'][entry_id]
         else:
             print("\tEntry NOT found")
-            return f"No entry with id: {entry_id} was found in file f{self.filepath}"
+            return None
 
     # string entry_id: the id of the entry to clear
     def clear_entry(self, entry_id):
@@ -116,7 +126,6 @@ class TextRecorder:
             self.data['text_entries'][entry_id] = "==DELETED ENTRY=="
         else:
             print("\tEntry NOT found")
-            return f"No entry with id: {entry_id} was found in file f{self.filepath}"
         
 
     # return string: the number of entries in text_entries
@@ -129,6 +138,7 @@ class TextRecorder:
         return self.get_num_entries()
 
 
+    # for debugging, print all data
     def print_data(self):
         print(self.data)
 
@@ -147,27 +157,29 @@ class TextRecorder:
         return datestamp
 
 
-tr = TextRecorder()
-tr.populate_data_with_template()
-tr.add_entry("today was a good day :)")
-time.sleep(0.1)
-tr.add_entry("today sucked")
-print(tr.get_entry(0))
-tr.serialize_data(tr.filepath)
-tr.load_data(tr.filepath)
-print(tr.get_entry(1))
-tr.append_entry(1, "jk today was gr8")
-print(tr.get_entry(1))
-tr.serialize_data(tr.filepath)
-time.sleep(0.1)
 
-tr2 = TextRecorder(DATA_LOCATION + tr.get_date() + ".txt")
-tr2.add_entry("another entry for the day")
-tr2.clear_entry(0)
-tr2.serialize_data(tr.filepath)
 
-print(tr2.get_entry(0))
-print(tr2.get_entry(1))
+# tr = TextRecorder()
+# tr.populate_data_with_template()
+# tr.add_entry("today was a good day :)")
+# time.sleep(0.1)
+# tr.add_entry("today sucked")
+# print(tr.get_entry(0))
+# tr.serialize_data(tr.filepath)
+# tr.load_data(tr.filepath)
+# print(tr.get_entry(1))
+# tr.append_entry(1, "jk today was gr8")
+# print(tr.get_entry(1))
+# tr.serialize_data(tr.filepath)
+# time.sleep(0.1)
 
-print(tr2.data['text_entries'].keys())
+# tr2 = TextRecorder(DATA_LOCATION + tr.get_date() + ".txt")
+# tr2.add_entry("another entry for the day")
+# tr2.clear_entry(0)
+# tr2.serialize_data(tr.filepath)
+
+# print(tr2.get_entry(0))
+# print(tr2.get_entry(1))
+
+# print(tr2.data['text_entries'].keys())
 
