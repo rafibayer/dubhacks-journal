@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css?family=Esteban|Montserrat&display=swap');
+
+body {
+  color: #2F2F2F;
+}
+
+.sidebyside {
+  display: flex;
+}
+
+.centered {
+  margin-left: 30vw;
+  margin-right: 30vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.spread {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+/*
+ .slider {
+   height: 100px;
+   overflow: hidden;
+ }
+
+ .slider h3 {
+   height: 100px;
+   margin-bottom: 100px;
+ }
+
+ @keyframes slider {
+   0% {margin-top: -800px;}
+   25% {margin-top: -600px;}
+   50% {margin-top: -400px;}
+   75% {margin-top: -200px;}
+   100% {margin-top: 0px;}
+ }
+
+ .slider {
+   animation: slider 5s linear infinite;
+ }*/
+
+#landing {
+  background-image: url("imgs/papers.jpg");
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+}
+
+.logo {
+  height: auto;
+  margin-left: 5vw;
+}
+
+#logo {
+  padding: 5vh 40vw 0px 0px;
+  width: 10vw;
+}
+
+#longlogo {
+  padding: 5vh 30vw 0px 0px;
+  width: 20vw;
+}
+
+h2 {
+  font-family: "Esteban", serif;
+  color: #EBBAB9;
+  font-size: 85px;
+  padding: 12vh 0px 0px 15vw;
+  margin-bottom: -1vw;
+  letter-spacing: .02em;
+}
+
+h3 {
+  font-family: "Montserrat", sans-serif;
+  color: #2F2F2F;
+  font-size: 110px;
+  font-weight: bold;
+  margin: -2vh 0px 0px 23vw;
+  letter-spacing: .1em;
+}
+
+h4 {
+  font-size: 42px;
+}
+
+p {
+  margin-top: -5vh;
+  font-size: 20px;
+}
+
+#text {
+  font-family: "Esteban", serif;
+  color: #2F2F2F;
+  padding-left: 6vw;
+  padding-right: 15vw;
+}
+
+/* for the nav bar */
+nav {
+  padding-top: 2vh;
+  overflow: hidden;
+  float: left;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  color: #53599A;
+}
+
+h1 {
+  display: inline-block;
+  margin: 2vh 2vw 4vh 1vw;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15pt;
+  color: #53599A;
+  letter-spacing: .2em;
+}
+
+h1:hover {
+  color: #DCC9B6;
+}
+
+.selected {
+  text-decoration: underline;
+}
+
+/* for the buttons */
+button {
+  border-radius: 20px;
+  font-family: 'Esteban', serif;
+  font-size: 24px;
+  background-color: #EBBAB9;
+  border: none;
+  color: #2F2F2F;
+  width: 10vw;
+  height: 5vh;
+  margin: 6vh 0px 0px 0px;
+  box-shadow: 2px 2px 5px #2F2F2F;
+}
+
+button:hover {
+  background-color: #2F2F2F;
+  color: #EBBAB9;
+  cursor: pointer;
+}
+
+h5 {
+  font-family: "Esteban", serif;
+  font-size: 96px;
+  text-align: center;
+  color: #DCC9B6;
+}
+
+.aboutus {
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-bottom: 5vh;
+  font-family: "Esteban", serif;
+  font-size: 24px;
+}
+
+.profilepic {
+  width: 18vw;
+}
+
+h6 {
+  font-family: "Montserrat", sans-serif;
+  color: #EBBAB9;
+  font-size: 32px;
+  text-align: center;
+}
+
+.title {
+  text-align: left;
+  margin-left: 5vw;
+  margin-bottom: 5vh;
+}
+
+.info {
+  margin-left: 5vw;
+  color: #2F2F2F;
+  font-size: 24px;
+
+}
+
+.option {
+  margin-top: 8vh;
+  width: 30vh;
+  height: 30vh;
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  letter-spacing: .05em;
+}
