@@ -71,3 +71,8 @@ class Camera():
         faces = face_client.face.detect_with_stream(image, return_face_attributes=['emotion'])
         
         return self.best_emotion(faces[0].face_attributes.emotion)
+
+
+
+# c = Camera()
+# print(c.getEmotion())

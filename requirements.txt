@@ -3,3 +3,5 @@ flask
 azure-cognitiveservices-vision-face
 azure.cosmos
 requests
+flask_cors
+azure.cognitiveservices.speech

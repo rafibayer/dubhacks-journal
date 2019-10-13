@@ -67,3 +67,6 @@ class Viz():
 
 
 
+v = Viz()
+print(v.happy_or_sad())
+print(v.wordAssociation())
