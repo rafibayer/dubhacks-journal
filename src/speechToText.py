@@ -59,3 +59,6 @@ class STT():
         #     print("Speech Recognition canceled: {}".format(cancellation_details.reason))
         #     if cancellation_details.reason == speechsdk.CancellationReason.Error:
         #         print("Error details: {}".format(cancellation_details.error_details))
+
+# s = STT()
+# print(s.speech_to_text())

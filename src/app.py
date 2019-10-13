@@ -4,9 +4,11 @@ from camera import Camera
 from analysisPipeline import AnalysisPipeline
 from visualize import Viz
 import os
-
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
+
 
 @app.route("/get_stt/", methods=['GET'])
 def call_stt():
@@ -22,7 +24,7 @@ def call_camera():
     my_cam = Camera()
     result = my_cam.getEmotion()
 
-    print(result)
+    print("RETURNING TO JS" + result)
     return result
 
 @app.route("/run_text_analysis/", methods=['GET'])
