@@ -7,13 +7,13 @@ import collections
 class Viz():
     def __init__(self):
         self.db = Storage()
-        self.words_dict = db.get_all_words()
-        self.days = db.data["dayEmotions"]
+        self.words_dict = self.db.get_all_words()
+        self.days = self.db.data["dayEmotions"]
 
-    def makeGrid(self):
+    def happy_or_sad(self):
         arr = []
         sad_counter = 0
-        for i range(0,30):
+        for i in range(0,30):
             emotion = 0
             if self.days[str(i)] == "happiness":
                 emotion = 1
@@ -28,7 +28,7 @@ class Viz():
                 emotion = -1
                 sad_counter += 1
 
-            arr.append[emotion]
+            arr.append(emotion)
     
         # data = np.array(arr)
         # data = np.reshape(data, (5,6))
@@ -49,7 +49,7 @@ class Viz():
         # ax.set_yticklabels([])
 
         # plt.savefig('../viz/grid.png')
-        if sad_counter > 10:
+        if sad_counter > 5:
             return "You have been feeling down lately, consider looking into some help"
         else:
             return "Glad you're doing okay! Keep it up!"
