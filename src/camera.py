@@ -3,7 +3,7 @@ import requests
 import base64
 from azure.cognitiveservices.vision.face import FaceClient
 from msrest.authentication import CognitiveServicesCredentials
-from src.storage import Storage
+from storage import Storage
 import io
 
 # Camera class that takes a photo and returns an emotion analyzed with
@@ -31,7 +31,7 @@ class Camera():
         cv2.destroyAllWindows()
         dayNum = db.get_next_day()
         db.set_day_emotion(dayNum, emotion)
-        return
+        return emotion
 
     # Takes emotion values from face detection.
     # Finds and returns the emotion with highest likelihood.

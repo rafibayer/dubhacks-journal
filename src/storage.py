@@ -49,7 +49,7 @@ class Storage:
 
     # create instance of storage
     # optionally pass a filepath, otherwise it uses the default
-    def __init__(self, filepath="src/data/data.txt"):
+    def __init__(self, filepath="data/data_happy.txt"):
         self.filepath = filepath
 
 
