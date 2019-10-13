@@ -137,6 +137,11 @@ h1:hover {
   color: #DCC9B6;
 }
 
+a {
+  text-decoration: none;
+  color: #84ACCE;
+}
+
 .selected {
   text-decoration: underline;
 }
@@ -193,7 +198,14 @@ h6 {
   margin-bottom: 5vh;
 }
 
-.info {
+.info, li{
+  margin-left: 5vw;
+  color: #2F2F2F;
+  font-size: 3vh;
+}
+
+.info2 {
+  padding-top: 5vh;
   margin-left: 5vw;
   color: #2F2F2F;
   font-size: 3vh;
@@ -211,4 +223,13 @@ h6 {
 #emotions {
   width: 60vw;
   padding-top: 5vh;
+}
+
+.hidden {
+  display: none;
+}
+
+#check {
+  width: 2vw;
+  padding-left: 2vw;
 }
