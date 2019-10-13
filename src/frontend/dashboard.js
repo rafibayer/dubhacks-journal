@@ -26,7 +26,6 @@
 
     function getRecommendation() {
       getFromURL("http://127.0.0.1:5000/get_happy_sad/", "recommend");
-
     }
 
     function populateRecommendation(resp) {
