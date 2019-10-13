@@ -62,14 +62,23 @@
   
   
 
-  function getFromURL(theUrl)
-  {
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-    xmlHttp.send( null );
-    alert(xmlHttp.responseText);
-    return xmlHttp.responseText;
-  }
+  function getFromURL(url) {
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "http://127.0.0.1:5000/take_picture/",
+      "method": "GET",
+      "headers": {
+        "cache-control": "no-cache",
+        "Postman-Token": "eb9966bc-d1fb-4af9-81c2-10b0222dbe1a"
+      }
+    }
+    
+    $.ajax(settings).done(function (response) {
+      console.log(response);
+    });
+  } 
+
 
   function getText(string) {
     console.log(string);
