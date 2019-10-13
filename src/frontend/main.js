@@ -5,9 +5,8 @@
 
   function init() {
     id("signup").addEventListener("click", signup);
-    //id("login").addEventListener("click", login);
-    id("login").addEventListener("click", login); //SWITCH TO DIFF BUTTON
-    addPageInd();
+    id("login").addEventListener("click", login);
+    id("viewMoods").addEventListener("click", moods);
   }
 
   function signup() {
@@ -20,38 +19,10 @@
 
   }
 
-  // function login() {
-  //   window.open("login.html","_self")
-  // }
 
 
 
-  function addPageInd() { //add function to make the indicator change when scrolling!!
-    id("dashboard").addEventListener("click", activeDash);
-    id("about").addEventListener("click", activeAbout);
-    id("contact").addEventListener("click", activeContact);
-  }
-
-  function activeDash() {
-    removeInd();
-    id("dashboard").classList.add("selected");
-  }
-
-  function activeAbout() {
-    removeInd();
-    id("about").classList.add("selected");
-  }
-
-  function activeContact() {
-    removeInd();
-    id("contact").classList.add("selected");
-  }
-
-  function removeInd() {
-    id("dashboard").classList.remove("selected");
-    id("about").classList.remove("selected");
-    id("contact").classList.remove("selected");
-  }
+  
 /**
   async function getFromURL(url) {
     fetch(url, {mode:"no-cors"}).then(data=>{return data.text()})
