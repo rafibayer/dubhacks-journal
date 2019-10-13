@@ -1,1 +1,0 @@
-{"wordSentiments": {"John": "1", "john": "0", "OK": "1", "Jason": "1", "1": "-1", "two": "-1"}, "dayEmotions": {"0": "neutral", "1": "neutral", "2": "neutral", "3": "happiness"}, "dayText": {"4": "['Test 1 two.', 'No.', '']"}}
